@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "AccessToken": {
+            "required": true,
+            "type": "string"
+        },
+        "Name": {
+            "required": true,
+            "type": "string"
+        },
+        "Year": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "AccessToken": {
+                    "type": "string"
+                },
+                "EpisodeCount": {
+                    "type": "string"
+                },
+                "EpisodeRuntime": {
+                    "type": "string"
+                },
+                "Genres": {
+                    "type": "string"
+                },
+                "ImdbID": {
+                    "type": "string"
+                },
+                "PremierYear": {
+                    "type": "string"
+                },
+                "Seasons": {
+                    "type": "string"
+                },
+                "ShowImage": {
+                    "type": "string"
+                },
+                "ShowStatus": {
+                    "type": "string"
+                },
+                "Synopsis": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

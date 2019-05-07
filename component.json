@@ -1,0 +1,987 @@
+{
+    "title": "shinobiapi",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/hillbillysoftware.com/shinobi/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.hillbillysoftware.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Actor_Get": {
+            "main": "./lib/actions/Actor_Get.js",
+            "title": "Returns data on queried actor/actress. Result set limited to 5 records",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Actor_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AddActor_Post": {
+            "main": "./lib/actions/AddActor_Post.js",
+            "title": "Add new actor or actress to database",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AddActor_Post.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AddTVShow_Post": {
+            "main": "./lib/actions/AddTVShow_Post.js",
+            "title": "Add new show to database",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AddTVShow_Post.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AliasesByID_Get": {
+            "main": "./lib/actions/AliasesByID_Get.js",
+            "title": "Get known aliases for Movies or Television shows from passed imdbID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AliasesByID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Aliases_Get": {
+            "main": "./lib/actions/Aliases_Get.js",
+            "title": "Get known aliases for Movies or Television shows",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Aliases_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AwardsbyWinner_Get": {
+            "main": "./lib/actions/AwardsbyWinner_Get.js",
+            "title": "Gets all awards by nominiee",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AwardsbyWinner_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "awards_Get": {
+            "main": "./lib/actions/awards_Get.js",
+            "title": "Gets all awards for requested year",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/awards_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ScheduleByDate_Get": {
+            "main": "./lib/actions/ScheduleByDate_Get.js",
+            "title": "Gets TV Schedule for selected data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ScheduleByDate_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CalendarCountries_Get": {
+            "main": "./lib/actions/CalendarCountries_Get.js",
+            "title": "Returns list of available countries in calendar database",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CalendarCountries_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CalendarNetworks_Get": {
+            "main": "./lib/actions/CalendarNetworks_Get.js",
+            "title": "Gets a list of available networks",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CalendarNetworks_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CalendarShowSeasons_Get": {
+            "main": "./lib/actions/CalendarShowSeasons_Get.js",
+            "title": "Returns list of seasons available in the calendar for show",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CalendarShowSeasons_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CalendarbyShownameSeason_Get": {
+            "main": "./lib/actions/CalendarbyShownameSeason_Get.js",
+            "title": "Get Calendar by showname and season",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CalendarbyShownameSeason_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CalendarByShowName_Get": {
+            "main": "./lib/actions/CalendarByShowName_Get.js",
+            "title": "Will return show schedule for queried showname and year",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CalendarByShowName_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CalendarToday_Get": {
+            "main": "./lib/actions/CalendarToday_Get.js",
+            "title": "Will return show schedule for today for all countries in database",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CalendarToday_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ActorInShows_Get": {
+            "main": "./lib/actions/ActorInShows_Get.js",
+            "title": "Returns all shows queried actor/actress is or has been in",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ActorInShows_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CastByActor_Get": {
+            "main": "./lib/actions/CastByActor_Get.js",
+            "title": "Returns list of show actor is appearing in",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CastByActor_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ActorsInTVShow_Get": {
+            "main": "./lib/actions/ActorsInTVShow_Get.js",
+            "title": "Returns all actors in queried tvshow",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ActorsInTVShow_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CrewByID_Get": {
+            "main": "./lib/actions/CrewByID_Get.js",
+            "title": "Get crew list by ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CrewByID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CrewByPerson_Get": {
+            "main": "./lib/actions/CrewByPerson_Get.js",
+            "title": "Gets list of productions searched person is/was involved in.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CrewByPerson_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CrewbyShowname_Get": {
+            "main": "./lib/actions/CrewbyShowname_Get.js",
+            "title": "Get crew list by showname",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CrewbyShowname_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Crew_Get": {
+            "main": "./lib/actions/Crew_Get.js",
+            "title": "Returns crew for queried show.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Crew_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EpisodesByID_Get": {
+            "main": "./lib/actions/EpisodesByID_Get.js",
+            "title": "Gets all episodes for selected ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EpisodesByID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EpisodesBySeason_Get": {
+            "main": "./lib/actions/EpisodesBySeason_Get.js",
+            "title": "Gets list of episodes for specified imdbID and Season number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EpisodesBySeason_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Episodes_Get": {
+            "main": "./lib/actions/Episodes_Get.js",
+            "title": "Gets all episodes for selected show",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Episodes_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EpisodesLastAvailableSeasonbyName_Get": {
+            "main": "./lib/actions/EpisodesLastAvailableSeasonbyName_Get.js",
+            "title": "Gets latest season number based on show name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EpisodesLastAvailableSeasonbyName_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EpisodesLastAvailableSeason_Get": {
+            "main": "./lib/actions/EpisodesLastAvailableSeason_Get.js",
+            "title": "Returns last available season number in database, based on passed imdbID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EpisodesLastAvailableSeason_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EpisodesSeasonCount_Get": {
+            "main": "./lib/actions/EpisodesSeasonCount_Get.js",
+            "title": "Returns number of available seasons and episodes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EpisodesSeasonCount_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetIMDBid_GetAsync": {
+            "main": "./lib/actions/GetIMDBid_GetAsync.js",
+            "title": "Gets list of avaiable IMDB ids from Movies and TV Show databases, you can use those to query other end points that need ID's",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetIMDBid_GetAsync.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Images_Get": {
+            "main": "./lib/actions/Images_Get.js",
+            "title": "Get images available for movie/tv show with passed imdbID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Images_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ImageSearch_Get": {
+            "main": "./lib/actions/ImageSearch_Get.js",
+            "title": "Get images available for movie/tv show with passed query",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ImageSearch_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MagnetsByDate_GetAsync": {
+            "main": "./lib/actions/MagnetsByDate_GetAsync.js",
+            "title": "Gets available magnet hashes on passed date (yyyy-mm-dd).  Feature not available on free plan, please donate to be able to use this feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MagnetsByDate_GetAsync.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MagnetsByimdbID_GetAsync": {
+            "main": "./lib/actions/MagnetsByimdbID_GetAsync.js",
+            "title": "Returns list of magnet hashes for passed IMDBID.  Feature not available on free plan, please donate to be able to use this feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MagnetsByimdbID_GetAsync.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "magnetsMovieByID_GetAsync": {
+            "main": "./lib/actions/magnetsMovieByID_GetAsync.js",
+            "title": "Try and find magnet links for queried movie.  Feature not available on free plan, please donate to be able to use this feature",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/magnetsMovieByID_GetAsync.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TVShowsearch_Get": {
+            "main": "./lib/actions/TVShowsearch_Get.js",
+            "title": "Returns results based on query, Feature not available on free plan, please donate to be able to use this feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TVShowsearch_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MovieID_Get": {
+            "main": "./lib/actions/MovieID_Get.js",
+            "title": "MovieID_Get",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MovieID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MovieSearch_GetAsync": {
+            "main": "./lib/actions/MovieSearch_GetAsync.js",
+            "title": "Searches for movies, result set limited to 5 records",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MovieSearch_GetAsync.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicAlbumArt_Get": {
+            "main": "./lib/actions/musicAlbumArt_Get.js",
+            "title": "Returns Albumart for passed AlbumID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicAlbumArt_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicCDCovers_Get": {
+            "main": "./lib/actions/musicCDCovers_Get.js",
+            "title": "Gets CD art for passed MusicBrainzID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicCDCovers_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MusicByMusicBrainz_Get": {
+            "main": "./lib/actions/MusicByMusicBrainz_Get.js",
+            "title": "Get Artist / Band information on MusicBrainzID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MusicByMusicBrainz_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicAlbums_Get": {
+            "main": "./lib/actions/musicAlbums_Get.js",
+            "title": "Get albums from passed ArtistID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicAlbums_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicCoverArt_Get": {
+            "main": "./lib/actions/musicCoverArt_Get.js",
+            "title": "Retrieves artist / band Banner and logo based on ArtistID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicCoverArt_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicCoverArtByName_Get": {
+            "main": "./lib/actions/musicCoverArtByName_Get.js",
+            "title": "Retrieves artist / band Banner and logo based on artist or bandname",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicCoverArtByName_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicArtistExtended_Get": {
+            "main": "./lib/actions/musicArtistExtended_Get.js",
+            "title": "Provides extended information, which includes all known albums and music videos of artist / band",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicArtistExtended_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Music_Get": {
+            "main": "./lib/actions/Music_Get.js",
+            "title": "Get information about passed band name or artist",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Music_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicLyricsbyAlbumID_Get": {
+            "main": "./lib/actions/musicLyricsbyAlbumID_Get.js",
+            "title": "Returns all lyrics for requested AlbumID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicLyricsbyAlbumID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicLyrics_Get": {
+            "main": "./lib/actions/musicLyrics_Get.js",
+            "title": "Get lyrics for band or artist (record set limited to 25)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicLyrics_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicLyricsBySong_Get": {
+            "main": "./lib/actions/musicLyricsBySong_Get.js",
+            "title": "Get lyrics on song title",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicLyricsBySong_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "musicTracks_Get": {
+            "main": "./lib/actions/musicTracks_Get.js",
+            "title": "Get all tracks from requested album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/musicTracks_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MusiVideos_Get": {
+            "main": "./lib/actions/MusiVideos_Get.js",
+            "title": "Lists all videos available for this Artist / Band",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MusiVideos_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Rating_Get": {
+            "main": "./lib/actions/Rating_Get.js",
+            "title": "Returns ratings from various resources(IMDB,Rotten Tomatoes, metaCritics, TVMaze etc) of passed IMDBid",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Rating_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RatingByName_Get": {
+            "main": "./lib/actions/RatingByName_Get.js",
+            "title": "RatingByName_Get",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RatingByName_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ShowStatus_Get": {
+            "main": "./lib/actions/ShowStatus_Get.js",
+            "title": "Returns status of queried show (query can be IMDB, TVDB, or showname)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ShowStatus_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TVShowID_Get": {
+            "main": "./lib/actions/TVShowID_Get.js",
+            "title": "Returns TVShow information based on IMDBid",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TVShowID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TVShowByName_Get": {
+            "main": "./lib/actions/TVShowByName_Get.js",
+            "title": "Returns results based on query, result set limited to 5 records",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TVShowByName_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TrailersbyID_Get": {
+            "main": "./lib/actions/TrailersbyID_Get.js",
+            "title": "Get Trailers for passed imdbID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TrailersbyID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TrailerCountByID_Get": {
+            "main": "./lib/actions/TrailerCountByID_Get.js",
+            "title": "Get trailer count for passed ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TrailerCountByID_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TrailerCountByName_Get": {
+            "main": "./lib/actions/TrailerCountByName_Get.js",
+            "title": "Get trailer count for passed name (Movie title or TVShow name)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TrailerCountByName_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TrailerSearch_Get": {
+            "main": "./lib/actions/TrailerSearch_Get.js",
+            "title": "Gets trailers by search phrase (limited to 10 records)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TrailerSearch_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

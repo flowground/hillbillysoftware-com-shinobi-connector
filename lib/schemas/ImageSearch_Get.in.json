@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "Accesstoken": {
+            "required": true,
+            "type": "string"
+        },
+        "Query": {
+            "required": true,
+            "type": "string"
+        },
+        "Strictmatch": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

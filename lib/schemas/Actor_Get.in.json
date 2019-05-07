@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "accesstoken": {
+            "required": true,
+            "type": "string"
+        },
+        "Query": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

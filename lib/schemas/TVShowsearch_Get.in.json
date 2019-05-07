@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "AccessToken": {
+            "required": true,
+            "type": "string"
+        },
+        "TVShow": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

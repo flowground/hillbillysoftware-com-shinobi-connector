@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "AccessToken": {
+            "required": true,
+            "type": "string"
+        },
+        "ID": {
+            "required": true,
+            "type": "string"
+        },
+        "Season": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

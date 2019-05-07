@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "AccessToken": {
+                    "type": "string"
+                },
+                "Bio": {
+                    "type": "string"
+                },
+                "BirthYear": {
+                    "type": "string"
+                },
+                "DeathYear": {
+                    "type": "string"
+                },
+                "Gender": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PopularityIndex": {
+                    "type": "string"
+                },
+                "ProfileImage": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

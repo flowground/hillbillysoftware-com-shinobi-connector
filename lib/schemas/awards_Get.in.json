@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "Year": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
